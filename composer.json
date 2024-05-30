@@ -1,0 +1,7 @@
+{
+    "name": "cristianrolendiovillavicencio/cousinspainting",
+    "description": "Proyecto de ejemplo para Cousinspainting",
+    "require": {
+        "php": ">=7.3"
+    }
+}
