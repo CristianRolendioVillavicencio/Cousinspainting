@@ -1,0 +1,131 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  17. FAQ CSS START
+/*----------------------------------------*/
+
+
+.faq{
+    &__wrapper{
+        @media #{$lg}{
+            padding-left: 0;
+            margin-top: 40px;
+        }
+        @media #{$md}{
+            padding-left: 0;
+            margin-top: 40px;
+        }
+        @media #{$sm}{
+            padding-left: 0;
+            margin-top: 40px;
+        }
+        @media #{$xs}{
+            padding-left: 0;
+            margin-top: 40px;
+        }
+    }
+    &__content{
+
+        & .accordion-item{
+            border: 1px solid $border-4;
+            margin-bottom: 10px;
+        }
+
+        & .accordion-item:first-of-type .accordion-button {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+        & .accordion-button:focus {
+            box-shadow: none;
+        }
+        & .accordion-button:not(.collapsed) {
+            color: $black;
+            background-color: #fff;
+            &::after{
+                content: '\f068';
+                @include transform(rotate(0));
+            }
+        }
+        & .accordion-button {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 18px 45px;
+            padding-left: 65px;
+            padding-top: 20px;
+            font-size: 18px;
+            font-weight: 500;
+            color: $black;
+            background-color: $white;
+            border: none;
+            border-radius: 0;
+            @media #{$xl}{
+                padding-right: 30px;
+            }
+            @media #{$xs}{
+                padding-right: 10px;
+            }
+            &::after{
+                background-image: none;
+                content: '\f067';
+                left: 30px;
+                font-size: 18px;
+                color: $black;
+                font-family: $fontawesome;
+                position: absolute;
+                margin: 0;
+            }
+        }
+        & .accordion-body{
+            border: none;
+            padding: 0;
+            padding-left: 65px;
+            padding-right: 45px;
+            @media #{$xs}{
+                padding-right: 10px;
+            }
+        }
+        & .accordion-collapse{
+            border: none;
+        }
+    }
+    &__thumb{
+        @media #{$xl}{
+            margin-left: 0;
+        }
+        @media #{$lg}{
+            margin-left: 0;
+        }
+        @media #{$md}{
+            margin-left: 0;
+        }
+        @media #{$sm}{
+            margin-left: 0;
+        }
+        @media #{$xs}{
+            margin-left: 0;
+        }
+        & img{
+            @media #{$xl}{
+                width: 100%;
+            }
+            @media #{$lg}{
+                text-align: center;
+                max-width: 100%;
+            }
+            @media #{$md}{
+                text-align: center;
+                max-width: 100%;
+            }
+            @media #{$sm}{
+                text-align: center;
+                max-width: 100%;
+            }
+            @media #{$xs}{
+                text-align: center;
+                max-width: 100%;
+            }
+        }
+    }
+}

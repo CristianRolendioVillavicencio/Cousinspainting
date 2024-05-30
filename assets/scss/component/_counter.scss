@@ -1,0 +1,147 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  16. COUNTER CSS START
+/*----------------------------------------*/
+
+.counter{
+    &__item{
+        padding: 50px 70px;
+        padding-bottom: 40px;
+        @media #{$md}{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        &-text{
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 45px;
+            padding-bottom: 35px;
+            @media #{$xl}{
+                padding-left: 0;
+                padding-right: 0;
+            }
+            @media #{$md}{
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        &-3{
+            @include box-shadow(0px 10px 60px 0px rgba(211, 211, 211, 0.4));
+            @media #{$lg}{
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            @media #{$sm}{
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+        }
+        &-wrapper{
+            &.mt-125{
+                @media #{$lg}{
+                    margin-top: -115px;
+                }
+                @media #{$md}{
+                    margin-top: -115px;
+                }
+                @media #{$sm}{
+                    margin-top: 0;
+                }
+                @media #{$xs}{
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+    &__icon{}
+    &__content{
+        & h3{
+            font-size: 40px;
+            margin-bottom: 0;
+        }
+        & p{
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+    }
+    &__text{
+        font-size: 35px;
+        font-weight: 400;
+        line-height: 1;
+    }
+    &__bg{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        @include background();
+    }
+    &__list{
+        & ul{
+            & li{
+                &:not(:last-child){
+                    margin-bottom: 10px;
+                }
+                &:hover{
+                    & i{
+                        background: $r-green-2;
+                        border-color: $r-green-2;
+                        color: $white;
+                    }
+                }
+            }
+        }
+        &-icon{
+            & i{
+                display: inline-block;
+                width: 45px;
+                height: 45px;
+                text-align: center;
+                line-height: 40px;
+                border: 2px solid $border-3;
+                color: $body-text;
+                @include border-radius(50%);
+            }
+        }
+        &-content{
+            & p{
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__about{
+        &-text{
+            & p{
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__bg{
+        position: absolute;
+        left: 50%;
+        @include transform(translateX(-50%));
+        top: 0;
+        height: 100%;
+        width: 90%;
+        z-index: -1;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    &__wrapper{
+        &-3{
+            @media #{$xl}{
+                padding-right: 0;
+            }
+            @media #{$lg}{
+                padding-right: 0;
+            }
+            @media #{$xs}{
+                padding-top: 0;
+                padding-right: 0;
+            }
+        }
+    }
+}

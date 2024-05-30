@@ -1,0 +1,74 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  18. PAGE TITLE CSS START
+/*----------------------------------------*/
+
+.page__title{
+    font-size: 85px;
+    color: $white;
+    line-height: 1;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    @media #{$sm}{
+        font-size: 65px;
+    }
+    @media #{$xs}{
+        font-size: 45px;
+    }
+    &-overlay{
+        position: relative;
+        &::after{
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba($color: $black-3, $alpha: .7);
+        }
+    }
+    &-area{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+    &-wrapper{
+        position: relative;
+        z-index: 1;
+        & .breadcrumb{
+            margin-bottom: 0;
+            &-item{
+                font-size: 24px;
+                font-weight: 600;
+                color: $white;
+
+                &.active{
+                    color: $r-yellow;
+                }
+
+                & + .breadcrumb-item{
+                    position: relative;
+                    padding-left: 25px;
+                    margin-left: 15px;
+                    &::before,
+                    &::after{
+                        position: absolute;
+                        padding-right: 0;
+                        float: none;
+                        content: '';
+                        left: 0;
+                        top: 2px;
+                        width: 2px;
+                        height: 20px;
+                        background: $white;
+
+                    }
+                    &::after{
+                        left: 8px;
+                    }
+                }
+            }
+        }
+    }
+}

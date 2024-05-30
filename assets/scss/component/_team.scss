@@ -1,0 +1,239 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  19. TEAM CSS START
+/*----------------------------------------*/
+
+
+.team{
+    &__item{
+        &:hover{
+            & .team__thumb{
+                & img{
+                    @include transform(scale(1.1));
+                }
+            }
+        }
+    }
+    &__thumb{}
+    &__content{
+        padding: 35px 43px;
+        border: 1px solid $border-5;
+        border-top: none;
+        & .post{
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: $body-text;
+        }
+    }
+    &__title{
+        font-size: 22px;
+        margin-bottom: 2px;
+        & a{
+            &:hover{
+                color: $r-yellow;
+            }
+        }
+    }
+    &__social{
+        & ul{
+            & li{
+                display: inline-block;
+                &:not(:last-child){
+                    margin-right: 5px;
+                }
+                & a{
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 42px;
+                    text-align: center;
+                    background: $grey;
+                    color: $black;
+                    @include border-radius(5px);
+                    &:hover{
+                        color: $black;
+                        background: $r-yellow;
+                    }
+                }
+            }
+        }
+    }
+    &__bg{
+        position: relative;
+        &::after{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 254px;
+            background: $grey;
+            z-index: -1;
+            @media #{$lg}{
+                height: 200px;
+            }
+        }
+    }
+}
+
+// team details
+.team-details {
+	@media #{$xs} {
+		padding-top: 50px;
+		padding-bottom: 20px;
+	}
+}
+.tmd-img {
+	margin-bottom: 105px;
+	@media #{$xs} {
+		margin-bottom: 50px;
+	}
+	&:before {
+		position: absolute;
+		content: "";
+		width: 92.5%;
+		height: 93.3%;
+		background: $r-pink;
+		clip-path: polygon(0 0, 100% 100%, 0 100%);
+		bottom: -30px;
+		left: -30px;
+		z-index: -1;
+		@media #{$xs} {
+			bottom: -10px;
+			left: -10px;
+		}
+	}
+	& img {
+		width: 100%;
+	}
+}
+.about-member-details {
+	padding: 10px 30px 0 70px;
+	@media #{$xl} {
+		padding: 20px 30px 0 30px;
+	}
+	@media #{$lg,$md,$xs,$sm} {
+		padding: 0;
+		margin-bottom: 50px;
+	}
+	& > span {
+		font-size: 14px;
+		color: $r-pink;
+		font-weight: 700;
+		text-transform: uppercase;
+		margin-bottom: 10px;
+		display: inline-block;
+	}
+	& h2 {
+		line-height: 1;
+		margin-bottom: 24px;
+		@media #{$lg} {
+			font-size: 50px;
+		}
+		@media #{$xs} {
+			font-size: 36px;
+		}
+	}
+	& p {
+		font-size: 18px;
+		line-height: 30px;
+		padding-bottom: 30px;
+		border-bottom: 1px solid #efefef;
+		margin-bottom: 30px;
+	}
+	& ul {
+		& li {
+			margin-bottom: 16px;
+			& span {
+                font-weight: 600;
+				color: #1a1a2b;
+			}
+			& a:hover {
+				color: $r-pink;
+			}
+		}
+	}
+}
+.member-qualification {
+	margin-bottom: 52px;
+	& h4 {
+		font-size: 20px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #efefef;
+		margin-bottom: 33px;
+		& span {
+			color: $r-pink;
+		}
+	}
+	& p {
+		padding-right: 10px;
+		margin-bottom: 15px;
+		@media #{$md} {
+			padding-right: 0;
+		}
+	}
+}
+
+// qualification progress
+.member-skill {
+	& .progress {
+		height: 6px;
+		background-color: #f6f6f6;
+		border-radius: 0;
+	}
+	& .progress-bar {
+		background-color: $r-pink;
+	}
+}
+.skill-wrapper {
+	margin-bottom: 27px;
+}
+.skill-title {
+	display: flex;
+	justify-content: space-between;
+	& span {
+		float: right;
+		font-size: 14px;
+		font-weight: 700;
+		color: $r-pink;
+	}
+}
+.skill-category {
+	font-size: 14px;
+	display: inline-block;
+	margin-bottom: 16px;
+}
+
+// member education
+.member-education {
+	padding-bottom: 32px;
+	& ul {
+		& li {
+			margin-bottom: 23px;
+		}
+	}
+}
+.edu-icon {
+	float: left;
+	margin-right: 20px;
+	& i {
+		font-size: 30px;
+		color: #dddddd;
+	}
+}
+.edu-text {
+	overflow: hidden;
+	& h5 {
+		font-size: 16px;
+		margin-bottom: 8px;
+		line-height: 1;
+	}
+	& p {
+		font-size: 14px;
+		margin-bottom: 0;
+	}
+}
+
+// team details form

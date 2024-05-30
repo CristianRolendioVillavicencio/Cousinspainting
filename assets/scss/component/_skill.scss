@@ -1,0 +1,88 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  14. SKILL CSS START
+/*----------------------------------------*/
+
+.skill{
+    &__area{}
+    &__wrapper{
+        @media #{$xs}{
+            padding-right: 0;
+        }
+        & p{
+            padding-left: 28px;
+            position: relative;
+            margin-bottom: 40px;
+            &::after{
+                position: absolute;
+                content: '';
+                left: 0;
+                top: 5px;
+                width: 3px;
+                height: 90%;
+                background: $r-pink;
+            }
+        }
+    }
+    &__progress{
+        @media #{$lg}{
+            margin-top: 50px;
+        }
+        @media #{$md}{
+            margin-top: 50px;
+        }
+        @media #{$sm}{
+            margin-top: 50px;
+        }
+        @media #{$xs}{
+            margin-top: 50px;
+        }
+        &-circle{
+            @media #{$xs}{
+                margin-bottom: 25px;
+            }
+            & .knob{
+                font-size: 26px !important;
+                color: $black !important;
+            }
+            & .progress-circular {
+                position: relative;
+            }
+            & .progress-circular::after {
+                position: absolute;
+                content: '';
+                left: 15px;
+                top: 15px;
+                width: 79%;
+                height: 73%;
+                border: 7px solid #f8f4ef;
+                border-radius: 50%;
+                @media #{$xs}{
+                    width: 46%;
+                }
+            }
+        }
+        &-content{
+            & h3{
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+            & p{
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__shape{
+        &-1{
+            position: absolute;
+            top: -65%;
+            left: 15%;
+            z-index: -1;
+            @media #{$xl, $lg, $md, $sm, $xs}{
+                width: 100%;
+                left: 0;
+            }
+        }
+    }
+}

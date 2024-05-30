@@ -1,0 +1,406 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  07. portfolio CSS START
+/*----------------------------------------*/
+
+.portfolio{
+    &__padding{
+        @media #{$md}{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        @media #{$sm}{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        @media #{$xs}{
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+    &__item{
+        &:hover{
+            & .portfolio__thumb{
+                &::after{
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+            & .portfolio__plus{
+                visibility: visible;
+                opacity: 1;
+                top: 30px;
+                @media #{$xs}{
+                    top: 10px;
+                }
+            }
+            & .portfolio__content{
+                visibility: visible;
+                opacity: 1;
+                bottom: 30px;
+                @media #{$xl}{
+                    bottom: 25px;
+                }
+                @media #{$lg}{
+                    bottom: 20px;
+                }
+                @media #{$xs}{
+                    bottom: 10px;
+                }
+            }
+        }
+        &-2{
+            &:hover{
+                & .portfolio__content-2{
+                    visibility: visible;
+                    opacity: 1;
+                    top: 50%;
+                }
+                & .portfolio__thumb-2{
+                    &::after{
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+        &-3{
+            &:hover{
+                 .portfolio__content-3{
+                    bottom: 0;
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &__thumb{
+        position: relative;
+        &::after{
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-image: -moz-linear-gradient( 180deg, rgba(34,35,40,0) 0%, rgb(34,35,40) 100%);
+            background-image: -webkit-linear-gradient( 180deg, rgba(34,35,40,0) 0%, rgb(34,35,40) 100%);
+            background-image: -ms-linear-gradient( 180deg, rgba(34,35,40,0) 0%, rgb(34,35,40) 100%);
+            background-image: linear-gradient( 180deg, rgba(34,35,40,0) 0%, rgb(34,35,40) 100%);
+            visibility: hidden;
+            opacity: 0;
+        }
+        &-2{
+            position: relative;
+            &::after{
+                position: absolute;
+                content: '';
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba($color: $r-green-2, $alpha: .75);
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+    }
+    &__content{
+        position: absolute;
+        bottom: 0px;
+        left: 40px;
+        visibility: hidden;
+        opacity: 0;
+        @media #{$xl}{
+            left: 25px;
+        }
+        @media #{$lg}{
+            left: 20px;
+        }
+        @media #{$xs}{
+            left: 20px;
+        }
+        & p{
+            font-size: 15px;
+            color: $white;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+        &-2{
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            @include transform(translate(-50%, -50%));
+            width: 100%;
+            text-align: center;
+            visibility: hidden;
+            opacity: 0;
+            & p{
+                font-size: 15px;
+                color: $white;
+                font-weight: 500;
+                margin-bottom: 0;
+            }
+        }
+        &-3{
+            position: absolute;
+            bottom: -100px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            padding: 20px 35px;
+            background: $white;
+            visibility: hidden;
+            opacity: 0;
+            & p{
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__title{
+        font-size: 30px;
+        color: $white;
+        margin-bottom: 5px;
+        @media #{$xl}{
+            font-size: 22px;
+        }
+        @media #{$lg}{
+            font-size: 24px;
+        }
+        @media #{$xs}{
+            font-size: 20px;
+        }
+        &-3{
+            font-size: 24px;
+            margin-bottom: 0;
+            @media #{$lg}{
+                font-size: 19px;
+            }
+            @media #{$xs}{
+                font-size: 19px;
+            }
+            & a{
+                &:hover{
+                    color: $r-green-2;
+                }
+            }
+        }
+    }
+    &__plus{
+        position: absolute;
+        top: 0px;
+        right: 30px;
+        z-index: 1;
+        visibility: hidden;
+        opacity: 0;
+        @media #{$xs}{
+            right: 10px;
+        }
+        & a{
+            font-size: 15px;
+            color: $white;
+            display: inline-block;
+            width: 45px;
+            height:45px;
+            line-height: 45px;
+            text-align: center;
+            border: 1px solid rgba($color: $white, $alpha: .3);
+            &:hover{
+                color: $black;
+                background: $white;
+            }
+        }
+        &-2{
+            & a{
+                font-size: 15px;
+                color: $black;
+                display: inline-block;
+                width: 55px;
+                height:55px;
+                line-height: 58px;
+                text-align: center;
+                background: $r-yellow;
+                &:hover{
+                    background: $white;
+                }
+            }
+        }
+        &-3{
+            & a{
+                display: inline-block;
+                width: 55px;
+                height: 55px;
+                line-height: 57px;
+                background: $r-yellow;
+                color: $black-3;
+                text-align: center;
+                &:hover{
+                    background: $black-3;
+                    color: $white;
+                }
+            }
+        }
+    }
+    &__bg{
+        position: relative;
+        &::after{
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: -480px;
+            width: 100%;
+            height: 805px;
+            background: $grey;
+            z-index: -1;
+        }
+        &-2{
+            &::after{
+                bottom: -156px;
+                height: 75%;
+            }
+        }
+    }
+    &__details{
+        &-info{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background: $r-green-2;
+            padding: 50px 50px;
+            @media #{$md}{
+                padding: 20px 35px;
+            }
+            &-item{
+                min-width: 250px;
+                border-bottom: 1px solid #0e5551;
+                padding-bottom: 25px;
+                margin-bottom: 20px;
+                @media #{$md}{
+                    padding-bottom: 15px;
+                    margin-bottom: 10px;
+                }
+                & span{
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: $r-yellow;
+                    position: relative;
+                    display: block;
+                    padding-left: 30px;
+                    &::after{
+                        position: absolute;
+                        content: '';
+                        left: 0;
+                        top: 50%;
+                        @include transform(translateY(-50%));
+                        width: 20px;
+                        height: 2px;
+                        background: $r-yellow;
+                    }
+                }
+                & p{
+                    font-size: 22px;
+                    font-weight: 600;
+                    color: $white;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &-text{
+
+        }
+        &-title{
+            font-size: 42px;
+            margin-bottom: 15px;
+            @media #{$xs}{
+                font-size: 27px;
+            }
+        }
+        &-features{
+            &-item{}
+            &-icon{}
+            &-text{
+                & h3{
+                    font-size: 24px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        &-goal{
+            &-content{
+                @media #{$md}{
+                    padding-left: 0;
+                }
+                @media #{$sm}{
+                    padding-left: 0;
+                }
+                @media #{$xs}{
+                    padding-left: 0;
+                }
+                & p{
+                    padding-right: 25px;
+                }
+            }
+            &-features{
+                margin-top: 16px;
+                & ul{
+                    & li{
+                        &:not(:last-child){
+                            margin-bottom: 13px;
+                        }
+                        &:hover{
+                            & .icon i{
+                                background: $r-green-2;
+                                color: $white;
+                                border-color: $r-green-2;
+                            }
+                        }
+                        & .icon{
+                            & i{
+                                display: inline-block;
+                                width: 45px;
+                                height: 45px;
+                                line-height: 41px;
+                                text-align: center;
+                                color: $body-text;
+                                border: 2px solid $border-2;
+                                @include border-radius(50%);
+                            }
+                        }
+                        & .text{
+                            & p{
+                                font-size: 15px;
+                                padding-right: 0;
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__social{
+        & ul{
+            & li{
+                display: inline-block;
+                &:not(:last-child){
+                    margin-right: 5px;
+                }
+                & a{
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 42px;
+                    text-align: center;
+                    background: #093e3b;
+                    color: #607887;
+                    @include border-radius(5px);
+                    &:hover{
+                        background: $r-yellow;
+                        color: $black-3;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,296 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  04. ABOUT CSS START
+/*----------------------------------------*/
+
+.about{
+    &__content{
+        @media #{$md}{
+            margin-top: 50px;
+            padding-left: 0;
+        }
+        @media #{$sm}{
+            margin-top: 50px;
+            padding-left: 0;
+        }
+        @media #{$xs}{
+            margin-top: 50px;
+            padding-left: 0;
+        }
+        & p{
+            margin-bottom: 20px;
+            &.bold-text{
+                font-size: 18px;
+                font-weight: 500;
+                color: $r-text-1;
+                margin-bottom: 20px;
+            }
+        }
+        &-2{
+            & p{
+                margin-bottom: 3px;
+            }
+            & .link-btn{
+                color: $body-text;
+                &:hover{
+                    color: $r-green;
+                }
+            }
+        }
+    }
+    &__author{
+        &-info{
+            & h3{
+                font-size: 20px;
+                margin-bottom: 0;
+            }
+            & span{
+                font-size: 14px;
+                color: $r-pink;
+                font-weight: 500;
+            }
+        }
+    }
+    &__thumb{
+        &-1{
+            & img{
+                -webkit-clip-path: polygon(0 0, 53% 0, 100% 100%, 0% 100%); 
+                clip-path: polygon(0 0, 53% 0, 100% 100%, 0% 100%);
+            }
+        }
+        &-2{
+            position: absolute;
+            top: 50%;
+            right: 0;
+            @include transform(translateY(-50%));
+            & img{
+                width: 360px;
+                height: 360px;
+                border: 12px solid $white;
+                @include border-radius(50%);
+
+                @media #{$xs}{
+                    width: 160px;
+                    height: 160px;
+                }
+            }
+        }
+        &.mt-45{
+            @media #{$xs}{
+                margin-top: 0;
+            }
+        }
+    }
+    &__triangle{
+        position: relative;
+        &::after{
+            position: absolute;
+            content: '';
+            left: -20px;
+            bottom: -20px;
+            width: 208px;
+            height: 208px;
+            background: $r-green;
+            -webkit-clip-path: polygon(0 1%, 0% 100%, 100% 100%); 
+            clip-path: polygon(0 1%, 0% 100%, 100% 100%);
+            z-index: -1;
+        }
+    }
+    &__item{
+        padding: 35px;
+        padding-top: 45px;
+        @include box-shadow( 0px 0px 15px 0px rgba(242, 242, 242, 0.9));
+        @media #{$lg}{
+            padding-left: 0;
+            padding-right: 0;
+        }
+        &-green{
+            background: $r-green-2;
+            @include box-shadow(none);
+            & .about__icon i{
+                color: $white;
+            }
+            & .about__title-2{
+                color: $white;
+                & a{
+                    &:hover{
+                        color: $white;
+                    }
+                }
+            }
+            & .about__content-2{
+                & p{
+                    color: $white;
+                }
+                & .link-btn{
+                    color: $white;
+                    &:hover{
+                        color: $white;
+                    }
+                }
+            }
+        }
+        &-yellow{
+            background: $r-yellow;
+            @include box-shadow(none);
+            & .about__icon i{
+                color: $black;
+            }
+            & .about__title-2{
+                color: $black;
+                & a{
+                    &:hover{
+                        color: $white;
+                    }
+                }
+            }
+            & .about__content-2{
+                & p{
+                    color: $black;
+                }
+                & .link-btn{
+                    color: $black;
+                    &:hover{
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+    &__icon{
+        & i{
+            font-size: 60px;
+            color: $r-green-2;
+            display: inline-block;
+        }
+        &.yellow{
+            & i{
+                color: $r-yellow;
+            }
+        }
+    }
+    &__title{
+        &-2{
+            font-size: 20px;
+            & a{
+                &:hover{
+                    color: $r-green;
+                }
+            }
+        }
+    }
+    &__wrapper{
+        &-2{
+            @media #{$md}{
+                padding-left: 0;
+                margin-top: 25px;
+            }
+            @media #{$sm}{
+                padding-left: 0;
+                margin-top: 25px;
+            }
+            @media #{$xs}{
+                padding-left: 0;
+                margin-top: 25px;
+            }
+            & > p{
+                margin-bottom: 40px;
+            }
+        }
+        &-3{
+            @media #{$xl}{
+                padding-right: 50px;
+            }
+            @media #{$lg}{
+                padding-bottom: 50px;
+            }
+            @media #{$md}{
+                padding-bottom: 50px;
+                padding-top: 45px;
+            }
+            @media #{$sm}{
+                padding-bottom: 50px;
+                padding-top: 45px;
+            }
+            @media #{$xs}{
+                padding-bottom: 50px;
+                padding-top: 45px;
+            }
+            & .ab-text{
+                color: $white;
+                margin-bottom: 20px;
+            }
+
+        }
+    }
+    &__bg{
+        position: absolute;
+        left: 50%;
+        top: 0;
+        height: 100%;
+        width: 92%;
+        z-index: -1;
+        @include transform(translateX(-50%));
+        @include background();
+        opacity: .04;
+    }
+    &__features{
+        & ul{
+            & li{
+                &:not(:last-child){
+                    margin-bottom: 15px;
+                }
+                &:hover{
+                    & i{
+                        background: $white;
+                        border-color: $white;
+                    }
+                }
+            }
+        }
+        &-icon{
+            & i{
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                text-align: center;
+                line-height: 36px;
+                border: 2px solid $r-green-5;
+                color: $r-yellow;
+                @include border-radius(50%);
+                &:hover{
+                    background: $white;
+                    border-color: $white;
+                }
+            }
+        }
+        &-content{
+            & h5{
+                font-size: 18px;
+                margin-bottom: 0;
+                color: $white;
+            }
+        }
+    }
+    &__quote{
+        font-size: 18px;
+        padding-left: 28px;
+        position: relative;
+        color: $white;
+        margin-bottom: 23px;
+        &::after{
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 5px;
+            width: 3px;
+            height: 80%;
+            background: $r-yellow;
+        }
+    } 
+}
+
+.about-mt--130{
+    margin-top: -130px;
+}

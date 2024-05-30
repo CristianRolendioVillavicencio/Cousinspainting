@@ -1,0 +1,1 @@
+sass --watch D:\Dropbox\Shahnewaz\roxce\roxce-prev\roxce\assets\scss\main.scss:D:\Dropbox\Shahnewaz\roxce\roxce-prev\roxce\assets\css\style.css

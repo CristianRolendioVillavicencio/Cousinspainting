@@ -1,0 +1,194 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  15. HERO CSS START
+/*----------------------------------------*/
+
+.hero{
+    &__height{
+        min-height: 950px;
+        @media #{$lg}{
+            min-height: 798px;
+        }
+        @media #{$md}{
+            min-height: 661px;
+        }
+        @media #{$sm}{
+            min-height: 750px;
+        }
+        @media #{$xs}{
+            min-height: 750px;
+        }
+    }
+    &__title{
+        font-size: 110px;
+        line-height: .9;
+        color: $white;
+        margin-bottom: 62px;
+        @media #{$lg}{
+            font-size: 80px;
+        }
+        @media #{$md}{
+            font-size: 70px;
+        }
+        @media #{$sm}{
+            font-size: 80px;
+        }
+        @media #{$xs}{
+            font-size: 70px;
+        }
+    }
+    &__content{
+        @media #{$md}{
+            margin-top: 80px;
+        }
+        & span{
+            font-family: $rubik;
+            color: $r-yellow;
+            font-weight: 500;
+            padding-left: 65px;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            &::after{
+                position: absolute;
+                content: '';
+                left: 0;
+                top: 12px;
+                width: 40px;
+                height: 3px;
+                background: $r-yellow;
+            }
+        }
+    }
+    &__thumb{
+        position: relative;
+        &-1{
+            margin-bottom: -76px;
+            & img{
+                @media #{$lg}{
+                    width: 100%;
+                }
+                @media #{$md}{
+                    width: 110%;
+                }
+            }
+        }
+        &-2{
+            position: absolute;
+            bottom: 110px;
+            right: -250px;
+            @media #{$xl}{
+                right: 0;
+            }
+            & span{
+                position: relative;
+                display: inline-block;
+                transform-origin: top right;
+                z-index: 1;
+                &::after{
+                    position: absolute;
+                    content: '';
+                    right: -10px;
+                    bottom: -10px;
+                    width: 100%;
+                    height: 100%;
+                    background: $r-yellow;
+                    @include transform(rotate(-7deg));
+                    z-index: -1;
+                }
+                & img{
+                    @include transform(rotate(-7deg));
+                }
+                & .play-btn{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    @include transform(translate(-50%, -50%));
+                    display: inline-block;
+                    font-size: 12px;
+                    width: 55px;
+                    height: 55px;
+                    line-height: 58px;
+                    text-align: center;
+                    background: $r-green-2;
+                    color: $r-yellow;
+                    @include border-radius(50%);
+                    & i{
+                        padding-left: 3px;
+                    }
+                    &:hover{
+                        background: $white;
+                        color: $r-green-2;
+                    }
+                }
+            }
+        }
+    }
+    &__shape{
+        &-1{
+            position: absolute;
+            top: 0;
+            right: 13%;
+        }
+        &-2{
+            position: absolute;
+            bottom:  0;
+            left: 2%;
+        }
+        & .hero-shape-circle{
+            position: absolute;
+            top: -95px;
+            right: 15%;
+            display: inline-block;
+            width: 625px;
+            height: 625px;
+            background: $r-yellow;
+            @include border-radius(50%);
+            animation: hero-pulse 2s infinite;
+            color: rgba($color: #000000, $alpha: 1.0);
+            @media #{$xl}{
+                right: 4%;
+            }
+            @media #{$lg}{
+                right: 8%;
+                width: 390px;
+                height: 390px;
+            }
+            @media #{$md}{
+                top: -50px;
+                width: 300px;
+                height: 300px;
+            }
+        }
+    }
+}
+
+@keyframes hero-pulse {
+0% {
+	-moz-box-shadow: 0 0 0 0 rgba($color: $r-yellow, $alpha: .4);
+	box-shadow: 0 0 0 0 rgba($color: $r-yellow, $alpha: .4);
+}
+70% {
+	-moz-box-shadow: 0 0 0 50px rgba($color: $r-yellow, $alpha: 0);
+	box-shadow: 0 0 0 50px rgba($color: $r-yellow, $alpha: 0);
+}
+100% {
+	-moz-box-shadow: 0 0 0 0 rgba($color: $r-yellow, $alpha: 0);
+	box-shadow: 0 0 0 0 rgba($color: $r-yellow, $alpha: 0);
+}
+}
+@-webkit-keyframes hero-pulse {
+0% {
+	-moz-box-shadow: 0 0 0 0 rgba($color: $r-yellow, $alpha: .4);
+	box-shadow: 0 0 0 0 rgba($color: $r-yellow, $alpha: .4);
+}
+70% {
+	-moz-box-shadow: 0 0 0 50px rgba($color: $r-yellow, $alpha: 0);
+	box-shadow: 0 0 0 50px rgba($color: $r-yellow, $alpha: 0);
+}
+100% {
+	-moz-box-shadow: 0 0 0 0 rgba($color: $r-yellow, $alpha: 0);
+	box-shadow: 0 0 0 0 rgba($color: $r-yellow, $alpha: 0);
+}
+}

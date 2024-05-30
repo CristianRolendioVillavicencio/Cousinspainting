@@ -1,0 +1,266 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  09. TESTIMONIAL CSS START
+/*----------------------------------------*/
+
+.testimonial{
+    &__area{
+        background-repeat: no-repeat;
+        background-size: cover;
+        &-2{
+            @include background();
+        }
+    }
+    &__item{
+        padding: 60px 45px;
+        padding-bottom: 50px;
+        @include border-radius(7px);
+
+        @media #{$xs}{
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        &-green{
+            & .testimonial__thumb::after{
+                background: $r-green-2;
+            }
+            & .testimonial__avater-info span{
+                color: $body-text;
+            }
+        }
+    }
+    &__content{
+        & p{
+            font-size: 18px;
+            line-height: 32px;
+        }
+        &-2{
+            & p{
+                font-size: 20px;
+                line-height: 32px;
+                color: $white;
+                margin-bottom: 25px;
+            }
+        }
+        &-3{
+            position: relative;
+            padding: 35px 50px;
+            padding-right: 60px;
+            @include box-shadow(0px 10px 60px 0px rgba(221, 221, 221, 0.4));
+            margin-bottom: 36px;
+            @media #{$xl}{
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+            @media #{$lg}{
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+            @media #{$xs}{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            & p{
+                font-size: 18px;
+                line-height: 32px;
+                color: $r-text-1;
+                margin-bottom: 15px;
+            }
+            &::after{
+                position: absolute;
+                content: '';
+                bottom: -22px;
+                left: 60px;
+                width: 0;
+                height: 0;
+                border-top: 22px solid $white;
+                border-right: 35px solid transparent;
+            }
+        }
+    }
+    &__thumb{
+        position: relative;
+        &::after{
+            position: absolute;
+            content: '';
+            left: 50%;
+            top: -10px;
+            @include transform(translateX(-50%));
+            width: 140px;
+            height: 70px;
+            border-top-left-radius: 110px;
+            border-top-right-radius: 110px;
+            background: $r-pink;
+        }
+        & img{
+            position: relative;
+            z-index: 1;
+            width: 120px;
+            height: 120px;
+            @include border-radius(50%);
+        }
+        &-2{
+            margin-left: 8px;
+            &::after{
+                width: 80px;
+                height: 40px;
+                background: $r-yellow;
+                top: -7px;
+                @media #{$xs}{
+                    left: -7px;
+                    @include transform(translateX(0%));
+                }
+            }
+            & img{
+                width: 65px;
+                height: 65px;
+            }
+        }
+    }
+    &__avater{
+        &-info{
+            & h4{
+                font-size: 20px;
+                display: inline-block;
+                margin-bottom: 0;
+            }
+            & span{
+                font-size: 14px;
+                font-weight: 600;
+                color: $r-pink;
+                padding-left: 6px;
+            }
+            &-2{
+                & h4{
+                    display: block;
+                    font-size: 24px;
+                    color: $white;
+                }
+                & span{
+                    color: $r-yellow;
+                    font-weight: 500;
+                    font-size: 15px;
+                }
+            }
+            &-3{
+                & h4{
+                    font-size: 20px;
+                    display: inline-block;
+                }
+                & span{
+                    color: $r-pink;
+                    font-weight: 600;
+                    margin-left: 5px;
+                }
+            }
+        }
+        &-3{
+            &-thumb{
+                & img{
+                    width: 70px;
+                    height: 70px;
+                    @include border-radius(50%);
+                }
+            }
+        }
+    }
+    &__quote-icon{
+        position: absolute;
+        top: 35px;
+        left: 30px;
+        z-index: -1;
+    }
+    &__shape{
+        &-1{
+            position: absolute;
+            top: -80px;
+            right: 85px;
+            z-index: -1;
+        }
+    }
+    &__slider{
+        &-wrapper{
+            & .testimonial-pagination{
+                @include flexbox();
+                flex-direction: column;
+                position: absolute;
+                left: -80px;
+                top: 95px;
+                z-index: 9;
+
+                @media #{$xl}{
+                    left: -30px;
+                }
+                @media #{$lg}{
+                    left: -20px;
+                }
+                @media #{$md}{
+                    left: -30px;
+                }
+                @media #{$sm}{
+                    left: -20px;
+                }
+                @media #{$xs}{
+                    left: -10px;
+                }
+                & .swiper-pagination-bullet{
+                    width: 10px;
+                    height: 10px;
+                    background: $grey-4;
+                    opacity: 1;
+                    direction: block;
+                    margin: 3px 0;
+                    &-active{
+                        background: $r-green-2;
+                    }
+                }
+            }
+        }
+    }
+    &__bg{
+        position: absolute;
+        left: 50%;
+        top: 0;
+        height: 100%;
+        width: 92%;
+        z-index: -1;
+        @include transform(translateX(-50%));
+        @include background();
+    }
+    &__wrapper{
+        &-2{
+            @media #{$xl}{
+                padding-right: 0;
+                padding-left: 40px;
+            }
+            @media #{$lg}{
+                padding-right: 0;
+                padding-left: 30px;
+            }
+            @media #{$md}{
+                padding-right: 160px;
+                padding-left: 30px;
+            }
+            @media #{$sm}{
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+            @media #{$xs}{
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+        }
+    }
+    &__img{
+        @media #{$md}{
+            text-align: center;
+        }
+        @media #{$xs}{
+            & img{
+                width: 100%;
+            }
+        }
+    }
+}
