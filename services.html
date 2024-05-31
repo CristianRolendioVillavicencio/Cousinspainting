@@ -410,47 +410,66 @@
                   <!-- video area end -->
          
                  <!-- contact area start -->
-         <section class="contact__area pt-235 pb-130 pink-bg p-relative z-index-1 fix">
-            <div class="contact__bg" data-background="assets/img/contact/map.png"></div>
+         <section class="contact__area pt-90 pb-130" id="contact__area">
             <div class="container">
-               
                <div class="row">
-                  <div class="col-xxl-6 col-xl-6">
-                     <div class="contact__wrapper pr-70 p-relative">
-                        <div class="section__title-wrapper mb-35">
-                           <span class="section__title-pre section__title-pre-white">Get In Touch</span>
-                           <h2 class="section__title section__title-white">Don’t Hesite Feel Free To Contact With us</h2>
-                        </div>
-                        <div class="contact__form">
-                           <form action="#">
-                              <div class="contact__input">
-                                 <input type="text" placeholder="Your Full Name">
-                                 <i class="far fa-user"></i>
-                              </div>
-                              <div class="contact__input">
-                                 <input type="text" placeholder="Your Email Address">
-                                 <i class="fal fa-envelope"></i>
-                              </div>
-                              <div class="contact__input">
-                                 <textarea placeholder="Your Message"></textarea>
-                              </div>
-                              <button type="submit" class="r-btn r-btn-white r-btn-plr-90">send message <i class="far fa-arrow-right"></i></button>
-                           </form>
-                        </div>
+                  <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                     <div class="section__title-wrapper mb-70 text-center">
+                        <span class="section__title-pre section__title-pre-3 center">Get In Touch</span>
+                        <h2 class="section__title section__title-2">Don’t Hesited To Conatct With Cousins Painting LLC</h2>
                      </div>
                   </div>
-                  <div class="col-xxl-6 col-xl-6">
-                     <div class="contact__thumb">
-                        <div class="contact__thumb-1 m-img text-xl-end mb-80 mt-30">
-                           <span>
-                              
-                              <img src="assets/img/contact/contact-11.jpg" alt=""style="width: 450px; height: 245px; object-fit: cover; object-position: center;">
-
-                           </span>
-                        </div>
-                        <div class="contact__thumb-2 m-img text-end">
-                           <img src="assets/img/contact/contact-2.jpg" alt=""style="width: 450px; height: 245px; object-fit: cover; object-position: center;">
-
+               </div>
+               <div class="row">
+                  <div class="col-xxl-12">
+                     <div class="contact__wrapper-4">
+                        <div class="contact__form-3 contact__form-4">
+                           <form action="assets/mail.php" method="post">
+                              <div class="row">
+                                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                    <div class="contact__input-3">
+                                       <input type="text" placeholder="Your Full Name" name="name">
+                                       <i class="far fa-user"></i>
+                                    </div>
+                                 </div>
+                                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                    <div class="contact__input-3">
+                                       <input type="email" placeholder="Your Email Address" name="email">
+                                       <i class="far fa-envelope"></i>
+                                    </div>
+                                 </div>
+                                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                    <div class="contact__input-3">
+                                       <input type="tel" placeholder="Phone Number" name="phone">
+                                       <i class="far fa-phone"></i>
+                                    </div>
+                                 </div>
+                                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                    <div class="contact__input-3">
+                                       <select name="service">
+                                          <option>Select Services</option>
+                                          <option>Residential</option>
+                                          <option>Commercial</option>
+                                          <option>Power Wash</option>
+                                          <option>Drywall Texturing</option>
+                                          <option>Cabinets Painting</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <!-- contact area start -->
+                                 <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12">
+                                    <div class="contact__input-3">
+                                       <textarea placeholder="Message" name="message"></textarea>
+                                    </div>
+                                 </div>
+                                 <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12">
+                                    <div class="contact__btn-3 contact__btn-4">
+                                       <button type="submit" class="r-btn r-btn-yellow w-100">Send Message <i class="far fa-arrow-right"></i></button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </form>
+                           <!--<div id="formMessage" style="display:none; color: green;">Thank you! Your message has been sent.</div>-->
                         </div>
                      </div>
                   </div>
